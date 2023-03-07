@@ -59,7 +59,8 @@ def edit_pizza(pizza_id):
 def index():
     return app.send_static_file('index.html')
 
-@app.get('/cardapio')
+
+@app.route('/cardapio', methods=['GET'])
 def get_cardapio():
     return jsonify(list(fake_db))
 
