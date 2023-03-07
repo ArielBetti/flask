@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+import os
 from flask_cors import CORS
 
 fake_db = [
@@ -73,4 +74,5 @@ def cardapio_route(pizza_id):
         return edit_pizza(pizza_id)
 
 
-app.run()
+if __name__ == '__main__':
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
